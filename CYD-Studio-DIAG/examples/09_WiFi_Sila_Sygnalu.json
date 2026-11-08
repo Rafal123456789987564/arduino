@@ -1,0 +1,165 @@
+{
+  "version": 3,
+  "currentDevice": "ex09",
+  "devices": [
+    {
+      "id": "ex09",
+      "profile": "cyd28",
+      "name": "Wi-Fi — miernik siły sygnału",
+      "scenes": [
+        {
+          "id": "menu",
+          "name": "Wi-Fi — miernik siły sygnału",
+          "bg": "#0b192a",
+          "widgets": [
+            {
+              "id": "title9",
+              "type": "text",
+              "text": "WIFI SIGNAL METER",
+              "x": 6,
+              "y": 4,
+              "w": 308,
+              "h": 28,
+              "bg": "#26baee",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 0,
+              "source": "constant",
+              "paths": []
+            },
+            {
+              "id": "w9_rfsignal_39_47",
+              "type": "rfsignal",
+              "text": "WiFi",
+              "x": 39,
+              "y": 47,
+              "w": 245,
+              "h": 109,
+              "bg": "#55c4fb",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 70,
+              "source": "wifi_rssi",
+              "min": -100,
+              "max": -30,
+              "unit": "",
+              "precision": 1,
+              "paths": [],
+              "radioType": "wifi"
+            },
+            {
+              "id": "w9_rfrssi_57_164",
+              "type": "rfrssi",
+              "text": "RSSI",
+              "x": 57,
+              "y": 164,
+              "w": 207,
+              "h": 37,
+              "bg": "#54d7b1",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 70,
+              "source": "wifi_rssi",
+              "min": -100,
+              "max": -30,
+              "unit": "",
+              "precision": 1,
+              "paths": [],
+              "radioType": "wifi"
+            },
+            {
+              "id": "hint9",
+              "type": "text",
+              "text": "Set your Wi-Fi STA credentials",
+              "x": 9,
+              "y": 212,
+              "w": 302,
+              "h": 23,
+              "bg": "#adbcda",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 0,
+              "source": "constant",
+              "paths": []
+            }
+          ]
+        }
+      ],
+      "currentScene": "menu",
+      "features": {
+        "wifi_mode": "sta",
+        "sta_ssid": "CHANGE_ME",
+        "sta_password": "CHANGE_ME",
+        "ap_ssid": "CYD-DIAG",
+        "ap_password": "cyd12345",
+        "ble": false,
+        "bt_classic": false,
+        "gyro": false,
+        "battery": false,
+        "battery_v_min": 11.8,
+        "battery_v_max": 14.4,
+        "battery_smooth": 20,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0,
+        "backlight_dim": 0,
+        "audio_rx": false,
+        "audio_tx": false,
+        "audio_dest": "192.168.4.1",
+        "audio_port": 3333
+      },
+      "pins": {
+        "i2c_sda": 27,
+        "i2c_scl": 22,
+        "battery_adc": 35,
+        "battery_divider": 2.0,
+        "mic_bclk": 19,
+        "mic_ws": 22,
+        "mic_din": 23
+      },
+      "touch": {
+        "xmin": 200,
+        "xmax": 3900,
+        "ymin": 200,
+        "ymax": 3900,
+        "swap": false,
+        "flipX": true,
+        "flipY": true,
+        "orientationVersion": 4
+      },
+      "libraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      },
+      "grove": {
+        "A": {
+          "io1": 27,
+          "io2": 22
+        },
+        "B": {
+          "io1": 35,
+          "io2": -1
+        },
+        "C": {
+          "io1": -1,
+          "io2": -1
+        }
+      },
+      "logic": {
+        "nodes": [],
+        "edges": [],
+        "layoutVersion": 2
+      },
+      "rotation": 1,
+      "lcd": {
+        "driver": "ili9341_2",
+        "order": "rgb",
+        "inversion": "off"
+      }
+    }
+  ],
+  "example_title": "Wi-Fi — miernik siły sygnału",
+  "example_description": "Pomiar siły odbieranego sygnału Wi-Fi.",
+  "example_category": "Komunikacja"
+}

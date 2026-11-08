@@ -1,0 +1,193 @@
+{
+  "version": 3,
+  "currentDevice": "ex01",
+  "devices": [
+    {
+      "id": "ex01",
+      "profile": "cyd28",
+      "name": "CYD — test napisów i kontrastu",
+      "scenes": [
+        {
+          "id": "menu",
+          "name": "LCD TEXT TEST",
+          "bg": "#0c1525",
+          "widgets": [
+            {
+              "id": "txtcheck_0",
+              "type": "text",
+              "x": 12,
+              "y": 14,
+              "w": 296,
+              "h": 34,
+              "text": "TEKST 123 ABC",
+              "bg": "#0c1525",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "source": "constant",
+              "level": 0
+            },
+            {
+              "id": "txtcheck_1",
+              "type": "button",
+              "x": 10,
+              "y": 55,
+              "w": 144,
+              "h": 47,
+              "text": "START",
+              "bg": "#075cb7",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "source": "constant",
+              "level": 0
+            },
+            {
+              "id": "txtcheck_2",
+              "type": "button",
+              "x": 166,
+              "y": 55,
+              "w": 144,
+              "h": 47,
+              "text": "STOP",
+              "bg": "#a52936",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "source": "constant",
+              "level": 0
+            },
+            {
+              "id": "txtcheck_3",
+              "type": "button",
+              "x": 10,
+              "y": 115,
+              "w": 144,
+              "h": 47,
+              "text": "SETUP",
+              "bg": "#1b8859",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "source": "constant",
+              "level": 0
+            },
+            {
+              "id": "txtcheck_4",
+              "type": "button",
+              "x": 166,
+              "y": 115,
+              "w": 144,
+              "h": 47,
+              "text": "MENU",
+              "bg": "#5546a6",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "source": "constant",
+              "level": 0
+            },
+            {
+              "id": "txtcheck_5",
+              "type": "button",
+              "x": 10,
+              "y": 177,
+              "w": 144,
+              "h": 45,
+              "text": "RESET",
+              "bg": "#323e53",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "source": "constant",
+              "level": 0
+            },
+            {
+              "id": "txtcheck_6",
+              "type": "button",
+              "x": 166,
+              "y": 177,
+              "w": 144,
+              "h": 45,
+              "text": "OK 123",
+              "bg": "#ddba40",
+              "fg": "#101722",
+              "visualStyle": "neo",
+              "source": "constant",
+              "level": 0
+            }
+          ]
+        }
+      ],
+      "currentScene": "menu",
+      "features": {
+        "wifi_mode": "off",
+        "sta_ssid": "CYD-DIAG",
+        "sta_password": "cyd12345",
+        "ap_ssid": "CYD-DIAG",
+        "ap_password": "cyd12345",
+        "ble": false,
+        "bt_classic": false,
+        "gyro": false,
+        "battery": false,
+        "battery_v_min": 3.2,
+        "battery_v_max": 4.2,
+        "battery_smooth": 20,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0,
+        "backlight_dim": 0,
+        "audio_rx": false,
+        "audio_tx": false,
+        "audio_dest": "192.168.4.1",
+        "audio_port": 3333
+      },
+      "pins": {
+        "i2c_sda": 27,
+        "i2c_scl": 22,
+        "battery_adc": 35,
+        "battery_divider": 2.0,
+        "mic_bclk": 19,
+        "mic_ws": 22,
+        "mic_din": 23
+      },
+      "touch": {
+        "xmin": 200,
+        "xmax": 3900,
+        "ymin": 200,
+        "ymax": 3900,
+        "swap": false,
+        "flipX": true,
+        "flipY": true,
+        "orientationVersion": 4
+      },
+      "libraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      },
+      "grove": {
+        "A": {
+          "io1": 27,
+          "io2": 22
+        },
+        "B": {
+          "io1": 35,
+          "io2": -1
+        },
+        "C": {
+          "io1": -1,
+          "io2": -1
+        }
+      },
+      "logic": {
+        "nodes": [],
+        "edges": []
+      },
+      "rotation": 1,
+      "lcd": {
+        "driver": "ili9341_2",
+        "order": "rgb",
+        "inversion": "off"
+      },
+      "uiTheme": "neo"
+    }
+  ],
+  "example_title": "CYD — test napisów i kontrastu",
+  "example_description": "Test napisów na przyciskach i kontrastu.",
+  "example_category": "Testy LCD"
+}

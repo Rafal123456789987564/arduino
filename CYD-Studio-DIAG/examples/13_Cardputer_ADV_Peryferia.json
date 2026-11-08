@@ -1,0 +1,131 @@
+{
+  "version": 3,
+  "currentDevice": "cardputer-adv",
+  "devices": [
+    {
+      "id": "cardputer-adv",
+      "profile": "cardputeradv",
+      "name": "Cardputer ADV — peryferia",
+      "rotation": 1,
+      "scenes": [
+        {
+          "id": "menu",
+          "name": "Cardputer ADV — peryferia",
+          "bg": "#071326",
+          "widgets": [
+            {
+              "id": "h",
+              "type": "text",
+              "text": "M5 CARDPUTER ADV",
+              "x": 8,
+              "y": 8,
+              "w": 222,
+              "h": 24,
+              "bg": "#5cdcf7",
+              "fg": "#ffffff",
+              "level": 0,
+              "source": "constant"
+            },
+            {
+              "id": "bat",
+              "type": "value",
+              "text": "BAT ADC GPIO10",
+              "x": 8,
+              "y": 37,
+              "w": 105,
+              "h": 62,
+              "bg": "#44d7a5",
+              "fg": "#ffffff",
+              "level": 70,
+              "source": "constant",
+              "min": 0,
+              "max": 100
+            },
+            {
+              "id": "grove",
+              "type": "button",
+              "text": "GROVE G2/G1",
+              "x": 119,
+              "y": 37,
+              "w": 110,
+              "h": 62,
+              "bg": "#3d8ce3",
+              "fg": "#ffffff",
+              "level": 0,
+              "source": "constant"
+            }
+          ]
+        }
+      ],
+      "currentScene": "menu",
+      "features": {
+        "wifi_mode": "off",
+        "battery": false,
+        "bt_classic": false,
+        "ble": false,
+        "gyro": false,
+        "audio_rx": false,
+        "audio_tx": false
+      },
+      "pins": {
+        "i2c_sda": 8,
+        "i2c_scl": 9,
+        "battery_adc": 10,
+        "battery_divider": 2
+      },
+      "grove": {
+        "A": {
+          "io1": 2,
+          "io2": 1
+        },
+        "B": {
+          "io1": -1,
+          "io2": -1
+        },
+        "C": {
+          "io1": -1,
+          "io2": -1
+        }
+      },
+      "logic": {
+        "nodes": [
+          {
+            "id": "n1",
+            "type": "adc",
+            "x": 20,
+            "y": 20,
+            "props": {
+              "gpio": 10,
+              "mul": 1
+            }
+          },
+          {
+            "id": "n2",
+            "type": "screenout",
+            "x": 280,
+            "y": 20,
+            "props": {
+              "widgetId": "bat"
+            }
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "input": 0
+          }
+        ]
+      },
+      "libraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      }
+    }
+  ],
+  "example_title": "Cardputer ADV — peryferia",
+  "example_description": "Profil sprzętowy Cardputer ADV i jego połączenia.",
+  "example_category": "Płytki M5Stack"
+}

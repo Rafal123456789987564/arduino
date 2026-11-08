@@ -1,0 +1,200 @@
+{
+  "format": "cyd-studio-project",
+  "schema_version": "1.0",
+  "version": 3,
+  "currentDevice": "brightness_duty",
+  "devices": [
+    {
+      "id": "brightness_duty",
+      "profile": "cyd28",
+      "name": "CYD — jasność LCD i Duty PWM (%)",
+      "rotation": 1,
+      "scenes": [
+        {
+          "id": "menu",
+          "name": "LCD DUTY TEST",
+          "bg": "#0b192c",
+          "widgets": [
+            {
+              "id": "hdr",
+              "type": "text",
+              "x": 8,
+              "y": 4,
+              "w": 304,
+              "h": 26,
+              "text": "JASNOSC I DUTY",
+              "bg": "#ffffff",
+              "fg": "#ffffff",
+              "source": "constant",
+              "level": 0,
+              "visualStyle": "neo",
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "unit": "%"
+            },
+            {
+              "id": "progress",
+              "type": "progress",
+              "x": 11,
+              "y": 37,
+              "w": 298,
+              "h": 47,
+              "text": "JASNOSC",
+              "bg": "#3ccfb5",
+              "fg": "#ffffff",
+              "source": "logic:screen",
+              "level": 0,
+              "visualStyle": "neo",
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "unit": "%"
+            },
+            {
+              "id": "slider",
+              "type": "slider",
+              "x": 11,
+              "y": 94,
+              "w": 298,
+              "h": 51,
+              "text": "DUTY 0-100%",
+              "bg": "#46b9ef",
+              "fg": "#ffffff",
+              "source": "constant",
+              "level": 65,
+              "visualStyle": "neo",
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "unit": "%"
+            },
+            {
+              "id": "value",
+              "type": "value",
+              "x": 11,
+              "y": 156,
+              "w": 140,
+              "h": 42,
+              "text": "68%",
+              "bg": "#1e3850",
+              "fg": "#ffffff",
+              "source": "logic:screen",
+              "level": 0,
+              "visualStyle": "neo",
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "unit": "%"
+            },
+            {
+              "id": "btn",
+              "type": "button",
+              "x": 166,
+              "y": 156,
+              "w": 144,
+              "h": 42,
+              "text": "MENU",
+              "bg": "#1d79c0",
+              "fg": "#ffffff",
+              "source": "constant",
+              "level": 0,
+              "visualStyle": "neo",
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "unit": "%"
+            },
+            {
+              "id": "footer",
+              "type": "text",
+              "x": 8,
+              "y": 206,
+              "w": 304,
+              "h": 23,
+              "text": "GORA: PROCENT  /  DOL: PASEK",
+              "bg": "#ffffff",
+              "fg": "#ffffff",
+              "source": "constant",
+              "level": 0,
+              "visualStyle": "neo",
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "unit": "%"
+            }
+          ]
+        }
+      ],
+      "currentScene": "menu",
+      "features": {
+        "wifi_mode": "off",
+        "battery": false,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0
+      },
+      "logic": {
+        "nodes": [
+          {
+            "id": "const",
+            "type": "constant",
+            "x": 20,
+            "y": 40,
+            "props": {
+              "value": 68
+            }
+          },
+          {
+            "id": "bright",
+            "type": "brightness",
+            "x": 300,
+            "y": 40,
+            "props": {}
+          },
+          {
+            "id": "pulse",
+            "type": "pulse",
+            "x": 20,
+            "y": 240,
+            "props": {
+              "period": 500,
+              "duty": 25
+            }
+          },
+          {
+            "id": "screen",
+            "type": "screenout",
+            "x": 300,
+            "y": 240,
+            "props": {
+              "widgetId": "progress"
+            }
+          }
+        ],
+        "edges": [
+          {
+            "from": "const",
+            "to": "bright",
+            "input": 0
+          },
+          {
+            "from": "const",
+            "to": "screen",
+            "input": 0
+          }
+        ]
+      },
+      "touch": {
+        "autoCal": true
+      },
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      }
+    }
+  ],
+  "example_title": "CYD — jasność LCD i Duty PWM (%)",
+  "example_description": "Sprawdzenie wartości jasności oraz Duty w procentach.",
+  "example_category": "Sterowanie"
+}

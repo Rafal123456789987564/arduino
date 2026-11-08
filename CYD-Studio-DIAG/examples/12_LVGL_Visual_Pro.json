@@ -1,0 +1,348 @@
+{
+  "version": 3,
+  "currentDevice": "sqrldemo",
+  "devices": [
+    {
+      "id": "sqrldemo",
+      "profile": "cyd28",
+      "name": "LVGL — wygląd Visual Pro",
+      "uiTheme": "neo",
+      "rotation": 1,
+      "currentScene": "monitor",
+      "features": {
+        "wifi_mode": "off",
+        "battery": false,
+        "ble": false,
+        "bt_classic": false,
+        "audio_rx": false,
+        "audio_tx": false,
+        "gyro": false
+      },
+      "pins": {
+        "battery_adc": 35,
+        "battery_divider": 2,
+        "i2c_sda": 27,
+        "i2c_scl": 22
+      },
+      "grove": {
+        "A": {
+          "io1": 27,
+          "io2": 22
+        },
+        "B": {
+          "io1": 35,
+          "io2": -1
+        },
+        "C": {
+          "io1": -1,
+          "io2": -1
+        }
+      },
+      "touch": {
+        "xmin": 200,
+        "xmax": 3900,
+        "ymin": 200,
+        "ymax": 3900,
+        "swap": false,
+        "flipX": true,
+        "flipY": true,
+        "orientationVersion": 4
+      },
+      "libraries": [],
+      "githubLibraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      },
+      "logic": {
+        "nodes": [
+          {
+            "id": "demoFFT",
+            "type": "fftpeak",
+            "x": 40,
+            "y": 30,
+            "props": {
+              "gpio": 35,
+              "sampleHz": 4000
+            }
+          },
+          {
+            "id": "fftSpecOut",
+            "type": "screenout",
+            "x": 330,
+            "y": 40,
+            "props": {
+              "widgetId": "fftb"
+            }
+          },
+          {
+            "id": "fftWFOut",
+            "type": "screenout",
+            "x": 330,
+            "y": 270,
+            "props": {
+              "widgetId": "wf"
+            }
+          }
+        ],
+        "edges": [
+          {
+            "from": "demoFFT",
+            "to": "fftSpecOut",
+            "input": 0
+          },
+          {
+            "from": "demoFFT",
+            "to": "fftWFOut",
+            "input": 0
+          }
+        ],
+        "layoutVersion": 2
+      },
+      "scenes": [
+        {
+          "id": "monitor",
+          "name": "NEON PRO",
+          "bg": "#061322",
+          "widgets": [
+            {
+              "id": "qtitle",
+              "type": "text",
+              "text": "CYD  /  DASHBOARD",
+              "x": 8,
+              "y": 2,
+              "w": 230,
+              "h": 22,
+              "bg": "#e4f6ff",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "to": "",
+              "level": 65,
+              "unit": "",
+              "precision": 1,
+              "min": 0,
+              "max": 100,
+              "threshold": 0.5,
+              "radioType": "wifi",
+              "paths": []
+            },
+            {
+              "id": "qvalue",
+              "type": "value",
+              "text": "VOLTAGE   [V]",
+              "x": 8,
+              "y": 31,
+              "w": 145,
+              "h": 70,
+              "bg": "#3be5d3",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "level": 3.78,
+              "min": 0,
+              "max": 5,
+              "precision": 2,
+              "unit": " V",
+              "source": "constant",
+              "to": "",
+              "threshold": 0.5,
+              "radioType": "wifi",
+              "paths": []
+            },
+            {
+              "id": "qgauge",
+              "type": "gauge",
+              "text": "OUTPUT",
+              "x": 162,
+              "y": 31,
+              "w": 150,
+              "h": 129,
+              "bg": "#57aaff",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "level": 76,
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "unit": "%",
+              "source": "constant",
+              "to": "",
+              "threshold": 0.5,
+              "radioType": "wifi",
+              "paths": []
+            },
+            {
+              "id": "qbar",
+              "type": "progress",
+              "text": "SYSTEM LOAD",
+              "x": 8,
+              "y": 110,
+              "w": 145,
+              "h": 50,
+              "bg": "#ffbe62",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "level": 64,
+              "min": 0,
+              "max": 100,
+              "source": "constant",
+              "to": "",
+              "unit": "",
+              "precision": 1,
+              "threshold": 0.5,
+              "radioType": "wifi",
+              "paths": []
+            },
+            {
+              "id": "qslider",
+              "type": "slider",
+              "text": "BRIGHTNESS",
+              "x": 8,
+              "y": 170,
+              "w": 304,
+              "h": 49,
+              "bg": "#37dba9",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "level": 75,
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "unit": "%",
+              "source": "constant",
+              "to": "",
+              "threshold": 0.5,
+              "radioType": "wifi",
+              "paths": []
+            },
+            {
+              "id": "qnext",
+              "type": "button",
+              "text": "FFT ›",
+              "x": 248,
+              "y": 1,
+              "w": 64,
+              "h": 22,
+              "bg": "#267ed3",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "to": "spectrum",
+              "source": "constant",
+              "level": 65,
+              "unit": "",
+              "precision": 1,
+              "min": 0,
+              "max": 100,
+              "threshold": 0.5,
+              "radioType": "wifi",
+              "paths": []
+            }
+          ]
+        },
+        {
+          "id": "spectrum",
+          "name": "FFT + WATERFALL",
+          "bg": "#061322",
+          "widgets": [
+            {
+              "id": "ftitle",
+              "type": "text",
+              "text": "ADC GPIO35   /   FFT WATERFALL",
+              "x": 8,
+              "y": 0,
+              "w": 307,
+              "h": 22,
+              "bg": "#e4f6ff",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "to": "",
+              "level": 65,
+              "unit": "",
+              "precision": 1,
+              "min": 0,
+              "max": 100,
+              "threshold": 0.5,
+              "radioType": "wifi",
+              "paths": []
+            },
+            {
+              "id": "fftb",
+              "type": "spectrum",
+              "text": "FFT",
+              "x": 7,
+              "y": 25,
+              "w": 306,
+              "h": 79,
+              "bg": "#5ad8ff",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "level": 0,
+              "source": "logic:demoFFT",
+              "to": "",
+              "unit": "",
+              "precision": 1,
+              "min": 0,
+              "max": 100,
+              "threshold": 0.5,
+              "radioType": "wifi",
+              "paths": []
+            },
+            {
+              "id": "wf",
+              "type": "waterfall",
+              "text": "WATERFALL",
+              "x": 7,
+              "y": 108,
+              "w": 306,
+              "h": 105,
+              "bg": "#35e3a5",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "waterfallMode": "adc_fft",
+              "level": 0,
+              "source": "logic:demoFFT",
+              "to": "",
+              "unit": "",
+              "precision": 1,
+              "min": 0,
+              "max": 100,
+              "threshold": 0.5,
+              "radioType": "wifi",
+              "paths": []
+            },
+            {
+              "id": "back",
+              "type": "button",
+              "text": "‹ DASHBOARD",
+              "x": 8,
+              "y": 216,
+              "w": 140,
+              "h": 22,
+              "bg": "#157095",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "to": "monitor",
+              "source": "constant",
+              "level": 65,
+              "unit": "",
+              "precision": 1,
+              "min": 0,
+              "max": 100,
+              "threshold": 0.5,
+              "radioType": "wifi",
+              "paths": []
+            }
+          ]
+        }
+      ],
+      "lcd": {
+        "driver": "ili9341_2",
+        "order": "rgb",
+        "inversion": "off"
+      }
+    }
+  ],
+  "example_title": "LVGL — wygląd Visual Pro",
+  "example_description": "Przykłady stylów kontrolek LVGL.",
+  "example_category": "Komponenty LCD"
+}

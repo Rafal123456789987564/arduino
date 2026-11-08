@@ -1,0 +1,221 @@
+{
+  "version": 3,
+  "currentDevice": "ex11",
+  "devices": [
+    {
+      "id": "ex11",
+      "profile": "cyd28",
+      "name": "ADC GPIO35 — FFT i Waterfall",
+      "scenes": [
+        {
+          "id": "menu",
+          "name": "ADC GPIO35 · WATERFALL",
+          "bg": "#06101f",
+          "widgets": [
+            {
+              "id": "wf_title",
+              "type": "text",
+              "text": "ADC35   •   SIGNAL ANALYSER",
+              "x": 7,
+              "y": 0,
+              "w": 306,
+              "h": 21,
+              "bg": "#b8edff",
+              "fg": "#ffffff",
+              "source": "constant",
+              "level": 0,
+              "paths": [],
+              "visualStyle": "neo"
+            },
+            {
+              "id": "wf_spec",
+              "type": "spectrum",
+              "text": "FFT 0-2000 Hz",
+              "x": 5,
+              "y": 25,
+              "w": 310,
+              "h": 70,
+              "bg": "#35d4ff",
+              "fg": "#ffffff",
+              "source": "constant",
+              "level": 0,
+              "min": 0,
+              "max": 100,
+              "unit": "",
+              "paths": [],
+              "visualStyle": "neo"
+            },
+            {
+              "id": "wf_heat",
+              "type": "waterfall",
+              "text": "ADC 35",
+              "waterfallMode": "adc_fft",
+              "x": 5,
+              "y": 100,
+              "w": 310,
+              "h": 115,
+              "bg": "#27e5ad",
+              "fg": "#ffffff",
+              "source": "logic:wf_n0",
+              "level": 0,
+              "min": 0,
+              "max": 2000,
+              "unit": "Hz",
+              "paths": [],
+              "visualStyle": "neo"
+            },
+            {
+              "id": "wf_peak",
+              "type": "integer",
+              "text": "PEAK",
+              "x": 7,
+              "y": 215,
+              "w": 306,
+              "h": 24,
+              "bg": "#f4bd61",
+              "fg": "#ffffff",
+              "source": "logic:wf_n0",
+              "level": 0,
+              "min": 0,
+              "max": 2000,
+              "unit": " Hz",
+              "precision": 0,
+              "paths": [],
+              "visualStyle": "neo"
+            }
+          ]
+        }
+      ],
+      "currentScene": "menu",
+      "features": {
+        "wifi_mode": "off",
+        "sta_ssid": "CYD-DIAG",
+        "sta_password": "",
+        "ap_ssid": "CYD-DIAG",
+        "ap_password": "",
+        "ble": false,
+        "bt_classic": false,
+        "gyro": false,
+        "battery": false,
+        "battery_v_min": 11.8,
+        "battery_v_max": 14.4,
+        "battery_smooth": 20,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0,
+        "backlight_dim": 0,
+        "audio_rx": false,
+        "audio_tx": false,
+        "audio_dest": "192.168.4.1",
+        "audio_port": 3333
+      },
+      "pins": {
+        "i2c_sda": 27,
+        "i2c_scl": 22,
+        "battery_adc": 35,
+        "battery_divider": 2.0,
+        "mic_bclk": 19,
+        "mic_ws": 22,
+        "mic_din": 23
+      },
+      "touch": {
+        "xmin": 200,
+        "xmax": 3900,
+        "ymin": 200,
+        "ymax": 3900,
+        "swap": false,
+        "flipX": true,
+        "flipY": true,
+        "orientationVersion": 4
+      },
+      "libraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      },
+      "grove": {
+        "A": {
+          "io1": 27,
+          "io2": 22
+        },
+        "B": {
+          "io1": 35,
+          "io2": -1
+        },
+        "C": {
+          "io1": -1,
+          "io2": -1
+        }
+      },
+      "logic": {
+        "nodes": [
+          {
+            "id": "wf_n0",
+            "type": "fftpeak",
+            "x": 35,
+            "y": 30,
+            "props": {
+              "gpio": 35,
+              "sampleHz": 4000
+            }
+          },
+          {
+            "id": "wf_n1",
+            "type": "screenout",
+            "x": 285,
+            "y": 30,
+            "props": {
+              "widgetId": "wf_spec"
+            }
+          },
+          {
+            "id": "wf_n2",
+            "type": "screenout",
+            "x": 285,
+            "y": 210,
+            "props": {
+              "widgetId": "wf_heat"
+            }
+          },
+          {
+            "id": "wf_n3",
+            "type": "screenout",
+            "x": 285,
+            "y": 390,
+            "props": {
+              "widgetId": "wf_peak"
+            }
+          }
+        ],
+        "edges": [
+          {
+            "from": "wf_n0",
+            "to": "wf_n1",
+            "input": 0
+          },
+          {
+            "from": "wf_n0",
+            "to": "wf_n2",
+            "input": 0
+          },
+          {
+            "from": "wf_n0",
+            "to": "wf_n3",
+            "input": 0
+          }
+        ],
+        "layoutVersion": 2
+      },
+      "rotation": 1,
+      "uiTheme": "neo",
+      "lcd": {
+        "driver": "ili9341_2",
+        "order": "rgb",
+        "inversion": "off"
+      }
+    }
+  ],
+  "example_title": "ADC GPIO35 — FFT i Waterfall",
+  "example_description": "Wizualizacja czasowo-częstotliwościowa sygnału ADC.",
+  "example_category": "Radio i analiza"
+}

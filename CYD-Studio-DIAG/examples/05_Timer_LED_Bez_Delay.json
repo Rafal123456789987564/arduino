@@ -1,0 +1,186 @@
+{
+  "version": 3,
+  "currentDevice": "ex05",
+  "devices": [
+    {
+      "id": "ex05",
+      "profile": "cyd28",
+      "name": "Timer LED — bez delay()",
+      "scenes": [
+        {
+          "id": "menu",
+          "name": "Timer LED — bez delay()",
+          "bg": "#0b192a",
+          "widgets": [
+            {
+              "id": "title5",
+              "type": "text",
+              "text": "NON-BLOCKING TIMER LED",
+              "x": 6,
+              "y": 4,
+              "w": 308,
+              "h": 28,
+              "bg": "#26baee",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 0,
+              "source": "constant",
+              "paths": []
+            },
+            {
+              "id": "w5_led_112_61",
+              "type": "led",
+              "text": "",
+              "x": 112,
+              "y": 61,
+              "w": 96,
+              "h": 96,
+              "bg": "#fcb565",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 70,
+              "source": "logic:e05n1",
+              "min": 0,
+              "max": 100,
+              "unit": "",
+              "precision": 1,
+              "paths": [],
+              "threshold": 0.5
+            },
+            {
+              "id": "hint5",
+              "type": "text",
+              "text": "1000ms period / 250ms ON",
+              "x": 9,
+              "y": 212,
+              "w": 302,
+              "h": 23,
+              "bg": "#adbcda",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 0,
+              "source": "constant",
+              "paths": []
+            }
+          ]
+        }
+      ],
+      "currentScene": "menu",
+      "features": {
+        "wifi_mode": "off",
+        "sta_ssid": "CYD-DIAG",
+        "sta_password": "cyd12345",
+        "ap_ssid": "CYD-DIAG",
+        "ap_password": "cyd12345",
+        "ble": false,
+        "bt_classic": false,
+        "gyro": false,
+        "battery": false,
+        "battery_v_min": 11.8,
+        "battery_v_max": 14.4,
+        "battery_smooth": 20,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0,
+        "backlight_dim": 0,
+        "audio_rx": false,
+        "audio_tx": false,
+        "audio_dest": "192.168.4.1",
+        "audio_port": 3333
+      },
+      "pins": {
+        "i2c_sda": 27,
+        "i2c_scl": 22,
+        "battery_adc": 35,
+        "battery_divider": 2.0,
+        "mic_bclk": 19,
+        "mic_ws": 22,
+        "mic_din": 23
+      },
+      "touch": {
+        "xmin": 200,
+        "xmax": 3900,
+        "ymin": 200,
+        "ymax": 3900,
+        "swap": false,
+        "flipX": true,
+        "flipY": true,
+        "orientationVersion": 4
+      },
+      "libraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      },
+      "grove": {
+        "A": {
+          "io1": 27,
+          "io2": 22
+        },
+        "B": {
+          "io1": 35,
+          "io2": -1
+        },
+        "C": {
+          "io1": -1,
+          "io2": -1
+        }
+      },
+      "logic": {
+        "nodes": [
+          {
+            "id": "e05n0",
+            "type": "timer",
+            "x": 30,
+            "y": 40,
+            "props": {
+              "period": 1000,
+              "pulse": 250
+            }
+          },
+          {
+            "id": "e05n1",
+            "type": "screenout",
+            "x": 382,
+            "y": 40,
+            "props": {
+              "widgetId": "w5_led_112_61"
+            }
+          },
+          {
+            "id": "e05n2",
+            "type": "serial",
+            "x": 734,
+            "y": 40,
+            "props": {
+              "name": "TIMER",
+              "ms": 150
+            }
+          }
+        ],
+        "edges": [
+          {
+            "from": "e05n0",
+            "to": "e05n1",
+            "input": 0
+          },
+          {
+            "from": "e05n0",
+            "to": "e05n2",
+            "input": 0
+          }
+        ],
+        "layoutVersion": 2
+      },
+      "rotation": 1,
+      "lcd": {
+        "driver": "ili9341_2",
+        "order": "rgb",
+        "inversion": "off"
+      }
+    }
+  ],
+  "example_title": "Timer LED — bez delay()",
+  "example_description": "Nieblokujące sterowanie diodą LED.",
+  "example_category": "Sterowanie"
+}

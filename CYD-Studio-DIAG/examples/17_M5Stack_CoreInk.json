@@ -1,0 +1,78 @@
+{
+  "version": 3,
+  "currentDevice": "ex01",
+  "devices": [
+    {
+      "id": "ex01",
+      "profile": "coreink",
+      "name": "M5Stack CoreInk — e-Ink 200×200",
+      "scenes": [],
+      "currentScene": "menu",
+      "features": {
+        "wifi_mode": "off",
+        "sta_ssid": "CYD-DIAG",
+        "sta_password": "cyd12345",
+        "ap_ssid": "CYD-DIAG",
+        "ap_password": "cyd12345",
+        "ble": false,
+        "bt_classic": false,
+        "gyro": false,
+        "battery": false,
+        "battery_v_min": 3.2,
+        "battery_v_max": 4.2,
+        "battery_smooth": 20,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0,
+        "backlight_dim": 0,
+        "audio_rx": false,
+        "audio_tx": false,
+        "audio_dest": "192.168.4.1",
+        "audio_port": 3333
+      },
+      "pins": {
+        "i2c_sda": 21,
+        "i2c_scl": 22,
+        "battery_adc": 35,
+        "battery_divider": 2,
+        "mic_bclk": 19,
+        "mic_ws": 22,
+        "mic_din": 23
+      },
+      "touch": {},
+      "libraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      },
+      "grove": {
+        "A": {
+          "io1": 32,
+          "io2": 33
+        },
+        "B": {
+          "io1": -1,
+          "io2": -1
+        },
+        "C": {
+          "io1": -1,
+          "io2": -1
+        }
+      },
+      "logic": {
+        "nodes": [],
+        "edges": []
+      },
+      "rotation": 0,
+      "lcd": {
+        "driver": "ili9341_2",
+        "order": "rgb",
+        "inversion": "off"
+      },
+      "uiTheme": "neo"
+    }
+  ],
+  "example_title": "M5Stack CoreInk — e-Ink 200×200",
+  "example_description": "Przykład konfiguracji CoreInk.",
+  "example_category": "Płytki M5Stack"
+}

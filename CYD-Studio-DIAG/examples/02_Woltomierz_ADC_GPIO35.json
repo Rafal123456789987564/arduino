@@ -1,0 +1,184 @@
+{
+  "version": 3,
+  "currentDevice": "ex02",
+  "devices": [
+    {
+      "id": "ex02",
+      "profile": "cyd28",
+      "name": "Woltomierz ADC — GPIO35",
+      "scenes": [
+        {
+          "id": "menu",
+          "name": "Woltomierz ADC — GPIO35",
+          "bg": "#0b192a",
+          "widgets": [
+            {
+              "id": "title2",
+              "type": "text",
+              "text": "ADC VOLTMETER GPIO35",
+              "x": 6,
+              "y": 4,
+              "w": 308,
+              "h": 28,
+              "bg": "#26baee",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 0,
+              "source": "constant",
+              "paths": []
+            },
+            {
+              "id": "w2_gauge_35_38",
+              "type": "gauge",
+              "text": "ADC",
+              "x": 35,
+              "y": 38,
+              "w": 252,
+              "h": 160,
+              "bg": "#34d8b4",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 70,
+              "source": "logic:e02n2",
+              "min": 0,
+              "max": 3.3,
+              "unit": "V",
+              "precision": 1,
+              "paths": []
+            },
+            {
+              "id": "hint2",
+              "type": "text",
+              "text": "0-3.3V at ADC pin only",
+              "x": 9,
+              "y": 212,
+              "w": 302,
+              "h": 23,
+              "bg": "#adbcda",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 0,
+              "source": "constant",
+              "paths": []
+            }
+          ]
+        }
+      ],
+      "currentScene": "menu",
+      "features": {
+        "wifi_mode": "off",
+        "sta_ssid": "CYD-DIAG",
+        "sta_password": "cyd12345",
+        "ap_ssid": "CYD-DIAG",
+        "ap_password": "cyd12345",
+        "ble": false,
+        "bt_classic": false,
+        "gyro": false,
+        "battery": false,
+        "battery_v_min": 11.8,
+        "battery_v_max": 14.4,
+        "battery_smooth": 20,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0,
+        "backlight_dim": 0,
+        "audio_rx": false,
+        "audio_tx": false,
+        "audio_dest": "192.168.4.1",
+        "audio_port": 3333
+      },
+      "pins": {
+        "i2c_sda": 27,
+        "i2c_scl": 22,
+        "battery_adc": 35,
+        "battery_divider": 2.0,
+        "mic_bclk": 19,
+        "mic_ws": 22,
+        "mic_din": 23
+      },
+      "touch": {
+        "xmin": 200,
+        "xmax": 3900,
+        "ymin": 200,
+        "ymax": 3900,
+        "swap": false,
+        "flipX": true,
+        "flipY": true,
+        "orientationVersion": 4
+      },
+      "libraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      },
+      "grove": {
+        "A": {
+          "io1": 27,
+          "io2": 22
+        },
+        "B": {
+          "io1": 35,
+          "io2": -1
+        },
+        "C": {
+          "io1": -1,
+          "io2": -1
+        }
+      },
+      "logic": {
+        "nodes": [
+          {
+            "id": "e02n0",
+            "type": "adc",
+            "x": 30,
+            "y": 40,
+            "props": {
+              "gpio": 35,
+              "mul": 1
+            }
+          },
+          {
+            "id": "e02n1",
+            "type": "ema",
+            "x": 382,
+            "y": 40,
+            "props": {
+              "alpha": 0.25
+            }
+          },
+          {
+            "id": "e02n2",
+            "type": "screenout",
+            "x": 734,
+            "y": 40,
+            "props": {
+              "widgetId": "w2_gauge_35_38"
+            }
+          }
+        ],
+        "edges": [
+          {
+            "from": "e02n0",
+            "to": "e02n1",
+            "input": 0
+          },
+          {
+            "from": "e02n1",
+            "to": "e02n2",
+            "input": 0
+          }
+        ],
+        "layoutVersion": 2
+      },
+      "rotation": 1,
+      "lcd": {
+        "driver": "ili9341_2",
+        "order": "rgb",
+        "inversion": "off"
+      }
+    }
+  ],
+  "example_title": "Woltomierz ADC — GPIO35",
+  "example_description": "Odczyt napięcia z wejścia ADC35.",
+  "example_category": "Pomiary"
+}

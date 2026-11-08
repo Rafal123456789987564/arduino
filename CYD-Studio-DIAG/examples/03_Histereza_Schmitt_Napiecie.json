@@ -1,0 +1,186 @@
+{
+  "version": 3,
+  "currentDevice": "ex03",
+  "devices": [
+    {
+      "id": "ex03",
+      "profile": "cyd28",
+      "name": "Przerzutnik Schmitta — napięcie",
+      "scenes": [
+        {
+          "id": "menu",
+          "name": "Przerzutnik Schmitta — napięcie",
+          "bg": "#0b192a",
+          "widgets": [
+            {
+              "id": "title3",
+              "type": "text",
+              "text": "SCHMITT VOLTAGE SWITCH",
+              "x": 6,
+              "y": 4,
+              "w": 308,
+              "h": 28,
+              "bg": "#26baee",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 0,
+              "source": "constant",
+              "paths": []
+            },
+            {
+              "id": "w3_led_118_67",
+              "type": "led",
+              "text": "ALARM",
+              "x": 118,
+              "y": 67,
+              "w": 86,
+              "h": 86,
+              "bg": "#18dba2",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 70,
+              "source": "logic:e03n2",
+              "min": 0,
+              "max": 100,
+              "unit": "",
+              "precision": 1,
+              "paths": [],
+              "threshold": 0.5
+            },
+            {
+              "id": "hint3",
+              "type": "text",
+              "text": "OFF < 1.2V | ON > 2.4V",
+              "x": 9,
+              "y": 212,
+              "w": 302,
+              "h": 23,
+              "bg": "#adbcda",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 0,
+              "source": "constant",
+              "paths": []
+            }
+          ]
+        }
+      ],
+      "currentScene": "menu",
+      "features": {
+        "wifi_mode": "off",
+        "sta_ssid": "CYD-DIAG",
+        "sta_password": "cyd12345",
+        "ap_ssid": "CYD-DIAG",
+        "ap_password": "cyd12345",
+        "ble": false,
+        "bt_classic": false,
+        "gyro": false,
+        "battery": false,
+        "battery_v_min": 11.8,
+        "battery_v_max": 14.4,
+        "battery_smooth": 20,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0,
+        "backlight_dim": 0,
+        "audio_rx": false,
+        "audio_tx": false,
+        "audio_dest": "192.168.4.1",
+        "audio_port": 3333
+      },
+      "pins": {
+        "i2c_sda": 27,
+        "i2c_scl": 22,
+        "battery_adc": 35,
+        "battery_divider": 2.0,
+        "mic_bclk": 19,
+        "mic_ws": 22,
+        "mic_din": 23
+      },
+      "touch": {
+        "xmin": 200,
+        "xmax": 3900,
+        "ymin": 200,
+        "ymax": 3900,
+        "swap": false,
+        "flipX": true,
+        "flipY": true,
+        "orientationVersion": 4
+      },
+      "libraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      },
+      "grove": {
+        "A": {
+          "io1": 27,
+          "io2": 22
+        },
+        "B": {
+          "io1": 35,
+          "io2": -1
+        },
+        "C": {
+          "io1": -1,
+          "io2": -1
+        }
+      },
+      "logic": {
+        "nodes": [
+          {
+            "id": "e03n0",
+            "type": "adc",
+            "x": 30,
+            "y": 40,
+            "props": {
+              "gpio": 35,
+              "mul": 1
+            }
+          },
+          {
+            "id": "e03n1",
+            "type": "schmitt",
+            "x": 382,
+            "y": 40,
+            "props": {
+              "low": 1.2,
+              "high": 2.4
+            }
+          },
+          {
+            "id": "e03n2",
+            "type": "screenout",
+            "x": 734,
+            "y": 40,
+            "props": {
+              "widgetId": "w3_led_118_67"
+            }
+          }
+        ],
+        "edges": [
+          {
+            "from": "e03n0",
+            "to": "e03n1",
+            "input": 0
+          },
+          {
+            "from": "e03n1",
+            "to": "e03n2",
+            "input": 0
+          }
+        ],
+        "layoutVersion": 2
+      },
+      "rotation": 1,
+      "lcd": {
+        "driver": "ili9341_2",
+        "order": "rgb",
+        "inversion": "off"
+      }
+    }
+  ],
+  "example_title": "Przerzutnik Schmitta — napięcie",
+  "example_description": "Przełączanie z histerezą, bez skakania stanu.",
+  "example_category": "Sterowanie"
+}

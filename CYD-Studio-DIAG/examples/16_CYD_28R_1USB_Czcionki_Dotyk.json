@@ -1,0 +1,203 @@
+{
+  "version": 3,
+  "currentDevice": "ex01",
+  "devices": [
+    {
+      "id": "ex01",
+      "profile": "cyd28",
+      "name": "CYD 2.8 R (1 USB) — czcionki i dotyk",
+      "scenes": [
+        {
+          "id": "menu",
+          "name": "TEST LCD",
+          "bg": "#101d32",
+          "widgets": [
+            {
+              "id": "check1",
+              "type": "text",
+              "text": "FONT Aa 0123456789",
+              "x": 4,
+              "y": 5,
+              "w": 232,
+              "h": 29,
+              "bg": "#ffffff",
+              "fg": "#ffffff",
+              "source": "constant",
+              "level": 40,
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "threshold": 0.5,
+              "paths": []
+            },
+            {
+              "id": "check2",
+              "type": "button",
+              "text": "LEWO GORA",
+              "x": 7,
+              "y": 44,
+              "w": 103,
+              "h": 46,
+              "bg": "#2f71ae",
+              "fg": "#ffffff",
+              "source": "constant",
+              "level": 40,
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "threshold": 0.5,
+              "paths": []
+            },
+            {
+              "id": "check3",
+              "type": "button",
+              "text": "PRAWO GORA",
+              "x": 130,
+              "y": 44,
+              "w": 103,
+              "h": 46,
+              "bg": "#277e5c",
+              "fg": "#ffffff",
+              "source": "constant",
+              "level": 40,
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "threshold": 0.5,
+              "paths": []
+            },
+            {
+              "id": "check4",
+              "type": "button",
+              "text": "LEWO DOL",
+              "x": 7,
+              "y": 247,
+              "w": 103,
+              "h": 46,
+              "bg": "#b75c40",
+              "fg": "#ffffff",
+              "source": "constant",
+              "level": 40,
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "threshold": 0.5,
+              "paths": []
+            },
+            {
+              "id": "check5",
+              "type": "button",
+              "text": "PRAWO DOL",
+              "x": 130,
+              "y": 247,
+              "w": 103,
+              "h": 46,
+              "bg": "#6c54ad",
+              "fg": "#ffffff",
+              "source": "constant",
+              "level": 40,
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "threshold": 0.5,
+              "paths": []
+            },
+            {
+              "id": "check6",
+              "type": "gauge",
+              "text": "SKALA",
+              "x": 46,
+              "y": 110,
+              "w": 150,
+              "h": 123,
+              "bg": "#3c99c6",
+              "fg": "#ffffff",
+              "source": "constant",
+              "level": 40,
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "threshold": 0.5,
+              "paths": []
+            }
+          ]
+        }
+      ],
+      "currentScene": "menu",
+      "features": {
+        "wifi_mode": "off",
+        "sta_ssid": "CYD-DIAG",
+        "sta_password": "cyd12345",
+        "ap_ssid": "CYD-DIAG",
+        "ap_password": "cyd12345",
+        "ble": false,
+        "bt_classic": false,
+        "gyro": false,
+        "battery": false,
+        "battery_v_min": 3.2,
+        "battery_v_max": 4.2,
+        "battery_smooth": 20,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0,
+        "backlight_dim": 0,
+        "audio_rx": false,
+        "audio_tx": false,
+        "audio_dest": "192.168.4.1",
+        "audio_port": 3333
+      },
+      "pins": {
+        "i2c_sda": 27,
+        "i2c_scl": 22,
+        "battery_adc": 35,
+        "battery_divider": 2.0,
+        "mic_bclk": 19,
+        "mic_ws": 22,
+        "mic_din": 23
+      },
+      "touch": {
+        "xmin": 200,
+        "xmax": 3900,
+        "ymin": 200,
+        "ymax": 3900,
+        "swap": false,
+        "flipX": true,
+        "flipY": true,
+        "orientationVersion": 4
+      },
+      "libraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      },
+      "grove": {
+        "A": {
+          "io1": 27,
+          "io2": 22
+        },
+        "B": {
+          "io1": 35,
+          "io2": -1
+        },
+        "C": {
+          "io1": -1,
+          "io2": -1
+        }
+      },
+      "logic": {
+        "nodes": [],
+        "edges": []
+      },
+      "rotation": 0,
+      "lcd": {
+        "driver": "ili9341_2",
+        "order": "rgb",
+        "inversion": "off"
+      },
+      "uiTheme": "neo"
+    }
+  ],
+  "example_title": "CYD 2.8 R (1 USB) — czcionki i dotyk",
+  "example_description": "Test orientacji dotyku i tekstów na LCD.",
+  "example_category": "Testy LCD"
+}

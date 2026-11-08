@@ -1,0 +1,307 @@
+{
+  "version": 3,
+  "currentDevice": "lcd-panel-check",
+  "devices": [
+    {
+      "id": "lcd-panel-check",
+      "profile": "cyd28",
+      "name": "CYD — test kolorów, skali i dotyku",
+      "uiTheme": "neo",
+      "rotation": 0,
+      "currentScene": "main",
+      "lcd": {
+        "driver": "ili9341_2",
+        "order": "rgb",
+        "inversion": "off"
+      },
+      "touch": {
+        "xmin": 200,
+        "xmax": 3900,
+        "ymin": 200,
+        "ymax": 3900,
+        "swap": false,
+        "flipX": true,
+        "flipY": true,
+        "autoCal": true,
+        "orientationVersion": 4
+      },
+      "features": {
+        "wifi_mode": "off",
+        "ble": false,
+        "bt_classic": false,
+        "gyro": false,
+        "battery": false,
+        "backlight_brightness": 90,
+        "backlight_timeout_s": 0,
+        "audio_rx": false,
+        "audio_tx": false
+      },
+      "pins": {
+        "i2c_sda": 27,
+        "i2c_scl": 22,
+        "battery_adc": 35,
+        "battery_divider": 2
+      },
+      "libraries": [],
+      "githubLibraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      },
+      "logic": {
+        "nodes": [],
+        "edges": []
+      },
+      "scenes": [
+        {
+          "id": "main",
+          "name": "LCD / TOUCH / SCALE",
+          "bg": "#0b1728",
+          "widgets": [
+            {
+              "id": "title",
+              "type": "text",
+              "x": 6,
+              "y": 4,
+              "w": 228,
+              "h": 23,
+              "text": "LCD R / TEST",
+              "bg": "#58d7fa",
+              "fg": "#ffffff"
+            },
+            {
+              "id": "red",
+              "type": "rect",
+              "x": 8,
+              "y": 35,
+              "w": 70,
+              "h": 29,
+              "text": "",
+              "bg": "#ff0000",
+              "fg": "#ffffff"
+            },
+            {
+              "id": "green",
+              "type": "rect",
+              "x": 85,
+              "y": 35,
+              "w": 70,
+              "h": 29,
+              "text": "",
+              "bg": "#00ff00",
+              "fg": "#ffffff"
+            },
+            {
+              "id": "blue",
+              "type": "rect",
+              "x": 162,
+              "y": 35,
+              "w": 70,
+              "h": 29,
+              "text": "",
+              "bg": "#0000ff",
+              "fg": "#ffffff"
+            },
+            {
+              "id": "colorname",
+              "type": "text",
+              "x": 8,
+              "y": 68,
+              "w": 224,
+              "h": 19,
+              "text": "RED       GREEN       BLUE",
+              "bg": "#ffffff",
+              "fg": "#ffffff"
+            },
+            {
+              "id": "gauge",
+              "type": "gauge",
+              "x": 10,
+              "y": 94,
+              "w": 126,
+              "h": 129,
+              "text": "0 - 100",
+              "bg": "#17b6e3",
+              "fg": "#ffffff",
+              "min": 0,
+              "max": 100,
+              "level": 72,
+              "precision": 0,
+              "unit": "%"
+            },
+            {
+              "id": "val",
+              "type": "value",
+              "x": 145,
+              "y": 105,
+              "w": 85,
+              "h": 36,
+              "text": "VALUE",
+              "bg": "#23a9ed",
+              "fg": "#ffffff",
+              "min": 0,
+              "max": 100,
+              "level": 72,
+              "unit": "%"
+            },
+            {
+              "id": "bar",
+              "type": "progress",
+              "x": 145,
+              "y": 154,
+              "w": 85,
+              "h": 32,
+              "text": "72 %",
+              "bg": "#2bc7a0",
+              "fg": "#ffffff",
+              "min": 0,
+              "max": 100,
+              "level": 72
+            },
+            {
+              "id": "left",
+              "type": "button",
+              "x": 8,
+              "y": 235,
+              "w": 70,
+              "h": 39,
+              "text": "LEFT",
+              "bg": "#148fce",
+              "fg": "#ffffff",
+              "to": "left"
+            },
+            {
+              "id": "middle",
+              "type": "button",
+              "x": 85,
+              "y": 235,
+              "w": 70,
+              "h": 39,
+              "text": "MIDDLE",
+              "bg": "#de8a38",
+              "fg": "#ffffff",
+              "to": "middle"
+            },
+            {
+              "id": "right",
+              "type": "button",
+              "x": 162,
+              "y": 235,
+              "w": 70,
+              "h": 39,
+              "text": "RIGHT",
+              "bg": "#a65ce4",
+              "fg": "#ffffff",
+              "to": "right"
+            },
+            {
+              "id": "info",
+              "type": "text",
+              "x": 8,
+              "y": 282,
+              "w": 224,
+              "h": 21,
+              "text": "Dotknij L / C / R",
+              "bg": "#7edbe9",
+              "fg": "#ffffff"
+            }
+          ]
+        },
+        {
+          "id": "left",
+          "name": "Touch LEFT",
+          "bg": "#0b1728",
+          "widgets": [
+            {
+              "id": "tleft",
+              "type": "text",
+              "x": 8,
+              "y": 52,
+              "w": 224,
+              "h": 75,
+              "text": "TOUCH LEFT",
+              "bg": "#1785c7",
+              "fg": "#ffffff"
+            },
+            {
+              "id": "returnleft",
+              "type": "button",
+              "x": 36,
+              "y": 186,
+              "w": 168,
+              "h": 58,
+              "text": "BACK",
+              "bg": "#19a1c0",
+              "fg": "#ffffff",
+              "to": "main"
+            }
+          ]
+        },
+        {
+          "id": "middle",
+          "name": "Touch MIDDLE",
+          "bg": "#0b1728",
+          "widgets": [
+            {
+              "id": "tmiddle",
+              "type": "text",
+              "x": 8,
+              "y": 52,
+              "w": 224,
+              "h": 75,
+              "text": "TOUCH MIDDLE",
+              "bg": "#bc7a38",
+              "fg": "#ffffff"
+            },
+            {
+              "id": "returnmiddle",
+              "type": "button",
+              "x": 36,
+              "y": 186,
+              "w": 168,
+              "h": 58,
+              "text": "BACK",
+              "bg": "#19a1c0",
+              "fg": "#ffffff",
+              "to": "main"
+            }
+          ]
+        },
+        {
+          "id": "right",
+          "name": "Touch RIGHT",
+          "bg": "#0b1728",
+          "widgets": [
+            {
+              "id": "tright",
+              "type": "text",
+              "x": 8,
+              "y": 52,
+              "w": 224,
+              "h": 75,
+              "text": "TOUCH RIGHT",
+              "bg": "#8b54b8",
+              "fg": "#ffffff"
+            },
+            {
+              "id": "returnright",
+              "type": "button",
+              "x": 36,
+              "y": 186,
+              "w": 168,
+              "h": 58,
+              "text": "BACK",
+              "bg": "#19a1c0",
+              "fg": "#ffffff",
+              "to": "main"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "example_title": "CYD — test kolorów, skali i dotyku",
+  "example_description": "Kolory RGB, podziałka miernika i współrzędne dotyku.",
+  "example_category": "Testy LCD"
+}

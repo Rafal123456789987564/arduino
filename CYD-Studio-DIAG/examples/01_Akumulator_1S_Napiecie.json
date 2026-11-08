@@ -1,0 +1,199 @@
+{
+  "version": 3,
+  "currentDevice": "ex01",
+  "devices": [
+    {
+      "id": "ex01",
+      "profile": "cyd28",
+      "name": "Akumulator 1S — napięcie 3,2–4,2 V",
+      "scenes": [
+        {
+          "id": "menu",
+          "name": "Akumulator 1S — napięcie 3,2–4,2 V",
+          "bg": "#0b192a",
+          "widgets": [
+            {
+              "id": "title1",
+              "type": "text",
+              "text": "BATTERY 1S 3.2-4.2V",
+              "x": 6,
+              "y": 4,
+              "w": 308,
+              "h": 28,
+              "bg": "#26baee",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 0,
+              "source": "constant",
+              "paths": []
+            },
+            {
+              "id": "w1_battery_27_82",
+              "type": "battery",
+              "text": "",
+              "x": 27,
+              "y": 82,
+              "w": 262,
+              "h": 68,
+              "bg": "#34d8b4",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 70,
+              "source": "logic:e01n3",
+              "min": 0,
+              "max": 100,
+              "unit": "",
+              "precision": 1,
+              "paths": []
+            },
+            {
+              "id": "hint1",
+              "type": "text",
+              "text": "GPIO35 via voltage divider",
+              "x": 9,
+              "y": 212,
+              "w": 302,
+              "h": 23,
+              "bg": "#adbcda",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 0,
+              "source": "constant",
+              "paths": []
+            }
+          ]
+        }
+      ],
+      "currentScene": "menu",
+      "features": {
+        "wifi_mode": "off",
+        "sta_ssid": "CYD-DIAG",
+        "sta_password": "cyd12345",
+        "ap_ssid": "CYD-DIAG",
+        "ap_password": "cyd12345",
+        "ble": false,
+        "bt_classic": false,
+        "gyro": false,
+        "battery": true,
+        "battery_v_min": 3.2,
+        "battery_v_max": 4.2,
+        "battery_smooth": 20,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0,
+        "backlight_dim": 0,
+        "audio_rx": false,
+        "audio_tx": false,
+        "audio_dest": "192.168.4.1",
+        "audio_port": 3333
+      },
+      "pins": {
+        "i2c_sda": 27,
+        "i2c_scl": 22,
+        "battery_adc": 35,
+        "battery_divider": 2.0,
+        "mic_bclk": 19,
+        "mic_ws": 22,
+        "mic_din": 23
+      },
+      "touch": {
+        "xmin": 200,
+        "xmax": 3900,
+        "ymin": 200,
+        "ymax": 3900,
+        "swap": false,
+        "flipX": true,
+        "flipY": true,
+        "orientationVersion": 4
+      },
+      "libraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      },
+      "grove": {
+        "A": {
+          "io1": 27,
+          "io2": 22
+        },
+        "B": {
+          "io1": 35,
+          "io2": -1
+        },
+        "C": {
+          "io1": -1,
+          "io2": -1
+        }
+      },
+      "logic": {
+        "nodes": [
+          {
+            "id": "e01n0",
+            "type": "voltage",
+            "x": 30,
+            "y": 40,
+            "props": {}
+          },
+          {
+            "id": "e01n1",
+            "type": "map",
+            "x": 382,
+            "y": 40,
+            "props": {
+              "inMin": 3.2,
+              "inMax": 4.2,
+              "outMin": 0,
+              "outMax": 100
+            }
+          },
+          {
+            "id": "e01n2",
+            "type": "clamp",
+            "x": 734,
+            "y": 40,
+            "props": {
+              "min": 0,
+              "max": 100
+            }
+          },
+          {
+            "id": "e01n3",
+            "type": "screenout",
+            "x": 1086,
+            "y": 40,
+            "props": {
+              "widgetId": "w1_battery_27_82"
+            }
+          }
+        ],
+        "edges": [
+          {
+            "from": "e01n0",
+            "to": "e01n1",
+            "input": 0
+          },
+          {
+            "from": "e01n1",
+            "to": "e01n2",
+            "input": 0
+          },
+          {
+            "from": "e01n2",
+            "to": "e01n3",
+            "input": 0
+          }
+        ],
+        "layoutVersion": 2
+      },
+      "rotation": 1,
+      "lcd": {
+        "driver": "ili9341_2",
+        "order": "rgb",
+        "inversion": "off"
+      }
+    }
+  ],
+  "example_title": "Akumulator 1S — napięcie 3,2–4,2 V",
+  "example_description": "Pomiar napięcia ogniwa i poziomu naładowania.",
+  "example_category": "Pomiary"
+}

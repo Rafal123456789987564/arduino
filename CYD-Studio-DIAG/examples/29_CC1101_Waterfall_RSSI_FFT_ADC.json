@@ -1,0 +1,110 @@
+{
+  "format": "cyd-studio-project",
+  "schema_version": "1.0",
+  "version": 3,
+  "currentDevice": "rf_fft",
+  "devices": [
+    {
+      "id": "rf_fft",
+      "profile": "cyd28",
+      "name": "CC1101 — Waterfall RSSI i FFT ADC",
+      "rotation": 1,
+      "scenes": [
+        {
+          "id": "menu",
+          "name": "WATERFALL TEST",
+          "bg": "#0b192c",
+          "widgets": [
+            {
+              "id": "wf",
+              "type": "waterfall",
+              "x": 8,
+              "y": 8,
+              "w": 304,
+              "h": 110,
+              "text": "CC1101",
+              "bg": "#3dceeb",
+              "fg": "#ffffff",
+              "source": "constant",
+              "level": 0,
+              "visualStyle": "neo",
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "unit": "%",
+              "waterfallMode": "rf_rssi"
+            },
+            {
+              "id": "fft",
+              "type": "spectrum",
+              "x": 8,
+              "y": 126,
+              "w": 304,
+              "h": 108,
+              "text": "ADC FFT",
+              "bg": "#53d4b5",
+              "fg": "#ffffff",
+              "source": "constant",
+              "level": 0,
+              "visualStyle": "neo",
+              "min": 0,
+              "max": 100,
+              "precision": 0,
+              "unit": "%"
+            }
+          ]
+        }
+      ],
+      "currentScene": "menu",
+      "features": {
+        "wifi_mode": "off",
+        "battery": false,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0
+      },
+      "logic": {
+        "nodes": [
+          {
+            "id": "cc",
+            "type": "cc1101rssi",
+            "x": 10,
+            "y": 30,
+            "props": {
+              "cs": 22,
+              "gdo0": 27,
+              "sck": 25,
+              "miso": 39,
+              "mosi": 32,
+              "from": 433.3,
+              "to": 434.5,
+              "bins": 48,
+              "settle": 8
+            }
+          },
+          {
+            "id": "fftpeak",
+            "type": "fftpeak",
+            "x": 300,
+            "y": 30,
+            "props": {
+              "gpio": 35,
+              "sampleHz": 4000
+            }
+          }
+        ],
+        "edges": []
+      },
+      "touch": {
+        "autoCal": true
+      },
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      }
+    }
+  ],
+  "example_title": "CC1101 — Waterfall RSSI i FFT ADC",
+  "example_description": "Niezależne źródła RSSI CC1101 i próbek FFT ADC.",
+  "example_category": "Radio i analiza"
+}

@@ -1,0 +1,121 @@
+{
+  "format": "cyd-studio-project",
+  "schema_version": "1.0",
+  "version": 3,
+  "currentDevice": "26_m5stack_basic",
+  "devices": [
+    {
+      "id": "26_m5stack_basic",
+      "profile": "m5basic",
+      "name": "M5Stack Basic — ekran LCD",
+      "rotation": 1,
+      "features": {
+        "wifi_mode": "off",
+        "ble": false,
+        "bt_classic": false,
+        "gyro": false,
+        "battery": false,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0
+      },
+      "pins": {
+        "i2c_sda": 21,
+        "i2c_scl": 22,
+        "battery_adc": 35,
+        "battery_divider": 2,
+        "mic_bclk": 19,
+        "mic_ws": 22,
+        "mic_din": 23
+      },
+      "scenes": [
+        {
+          "id": "menu",
+          "name": "M5 PANEL",
+          "bg": "#0b192b",
+          "widgets": [
+            {
+              "id": "26_m5stack_basic_text8",
+              "type": "text",
+              "text": "M5 TEST",
+              "x": 8,
+              "y": 4,
+              "w": 304,
+              "h": 20,
+              "bg": "#4ccffd",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "to": "",
+              "source": "constant",
+              "level": 45,
+              "min": 0,
+              "max": 100,
+              "unit": "",
+              "precision": 0,
+              "threshold": 0.5,
+              "paths": []
+            },
+            {
+              "id": "26_m5stack_basic_button8",
+              "type": "button",
+              "text": "MENU",
+              "x": 8,
+              "y": 36,
+              "w": 304,
+              "h": 37,
+              "bg": "#1f89c8",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "to": "menu",
+              "source": "constant",
+              "level": 45,
+              "min": 0,
+              "max": 100,
+              "unit": "",
+              "precision": 0,
+              "threshold": 0.5,
+              "paths": []
+            },
+            {
+              "id": "26_m5stack_basic_progress8",
+              "type": "progress",
+              "text": "DEMO 65",
+              "x": 8,
+              "y": 81,
+              "w": 304,
+              "h": 44,
+              "bg": "#30bd9b",
+              "fg": "#ffffff",
+              "visualStyle": "neo",
+              "to": "",
+              "source": "constant",
+              "level": 45,
+              "min": 0,
+              "max": 100,
+              "unit": "",
+              "precision": 0,
+              "threshold": 0.5,
+              "paths": []
+            }
+          ]
+        }
+      ],
+      "currentScene": "menu",
+      "logic": {
+        "nodes": [],
+        "edges": []
+      },
+      "touch": {
+        "autoCal": false
+      },
+      "libraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      }
+    }
+  ],
+  "example_title": "M5Stack Basic — ekran LCD",
+  "example_description": "Profil M5Stack Basic.",
+  "example_category": "Płytki M5Stack"
+}

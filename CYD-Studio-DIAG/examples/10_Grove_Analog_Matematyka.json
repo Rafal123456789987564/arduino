@@ -1,0 +1,236 @@
+{
+  "version": 3,
+  "currentDevice": "ex10",
+  "devices": [
+    {
+      "id": "ex10",
+      "profile": "cyd28",
+      "name": "Grove — pomiar analogowy i matematyka",
+      "scenes": [
+        {
+          "id": "menu",
+          "name": "Grove — pomiar analogowy i matematyka",
+          "bg": "#0b192a",
+          "widgets": [
+            {
+              "id": "title10",
+              "type": "text",
+              "text": "GROVE ANALOG MATH",
+              "x": 6,
+              "y": 4,
+              "w": 308,
+              "h": 28,
+              "bg": "#26baee",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 0,
+              "source": "constant",
+              "paths": []
+            },
+            {
+              "id": "w10_bar_35_69",
+              "type": "bar",
+              "text": "SENSOR",
+              "x": 35,
+              "y": 69,
+              "w": 254,
+              "h": 56,
+              "bg": "#44dbe0",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 70,
+              "source": "logic:e10n4",
+              "min": 0,
+              "max": 100,
+              "unit": "",
+              "precision": 1,
+              "paths": []
+            },
+            {
+              "id": "w10_value_82_140",
+              "type": "value",
+              "text": "SENSOR",
+              "x": 82,
+              "y": 140,
+              "w": 158,
+              "h": 60,
+              "bg": "#ace8f6",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 70,
+              "source": "logic:e10n4",
+              "min": 0,
+              "max": 100,
+              "unit": "%",
+              "precision": 1,
+              "paths": []
+            },
+            {
+              "id": "hint10",
+              "type": "text",
+              "text": "Grove B IO1 = GPIO35 ADC",
+              "x": 9,
+              "y": 212,
+              "w": 302,
+              "h": 23,
+              "bg": "#adbcda",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 0,
+              "source": "constant",
+              "paths": []
+            }
+          ]
+        }
+      ],
+      "currentScene": "menu",
+      "features": {
+        "wifi_mode": "off",
+        "sta_ssid": "CYD-DIAG",
+        "sta_password": "cyd12345",
+        "ap_ssid": "CYD-DIAG",
+        "ap_password": "cyd12345",
+        "ble": false,
+        "bt_classic": false,
+        "gyro": false,
+        "battery": false,
+        "battery_v_min": 11.8,
+        "battery_v_max": 14.4,
+        "battery_smooth": 20,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0,
+        "backlight_dim": 0,
+        "audio_rx": false,
+        "audio_tx": false,
+        "audio_dest": "192.168.4.1",
+        "audio_port": 3333
+      },
+      "pins": {
+        "i2c_sda": 27,
+        "i2c_scl": 22,
+        "battery_adc": 35,
+        "battery_divider": 2.0,
+        "mic_bclk": 19,
+        "mic_ws": 22,
+        "mic_din": 23
+      },
+      "touch": {
+        "xmin": 200,
+        "xmax": 3900,
+        "ymin": 200,
+        "ymax": 3900,
+        "swap": false,
+        "flipX": true,
+        "flipY": true,
+        "orientationVersion": 4
+      },
+      "libraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      },
+      "grove": {
+        "A": {
+          "io1": 27,
+          "io2": 22
+        },
+        "B": {
+          "io1": 35,
+          "io2": -1
+        },
+        "C": {
+          "io1": -1,
+          "io2": -1
+        }
+      },
+      "logic": {
+        "nodes": [
+          {
+            "id": "e10n0",
+            "type": "groveanalog",
+            "x": 30,
+            "y": 40,
+            "props": {
+              "port": "B",
+              "line": "io1",
+              "mul": 1
+            }
+          },
+          {
+            "id": "e10n1",
+            "type": "map",
+            "x": 382,
+            "y": 40,
+            "props": {
+              "inMin": 0,
+              "inMax": 3.3,
+              "outMin": 0,
+              "outMax": 100
+            }
+          },
+          {
+            "id": "e10n2",
+            "type": "clamp",
+            "x": 734,
+            "y": 40,
+            "props": {
+              "min": 0,
+              "max": 100
+            }
+          },
+          {
+            "id": "e10n3",
+            "type": "ema",
+            "x": 1086,
+            "y": 40,
+            "props": {
+              "alpha": 0.22
+            }
+          },
+          {
+            "id": "e10n4",
+            "type": "screenout",
+            "x": 1438,
+            "y": 40,
+            "props": {
+              "widgetId": "w10_bar_35_69"
+            }
+          }
+        ],
+        "edges": [
+          {
+            "from": "e10n0",
+            "to": "e10n1",
+            "input": 0
+          },
+          {
+            "from": "e10n1",
+            "to": "e10n2",
+            "input": 0
+          },
+          {
+            "from": "e10n2",
+            "to": "e10n3",
+            "input": 0
+          },
+          {
+            "from": "e10n3",
+            "to": "e10n4",
+            "input": 0
+          }
+        ],
+        "layoutVersion": 2
+      },
+      "rotation": 1,
+      "lcd": {
+        "driver": "ili9341_2",
+        "order": "rgb",
+        "inversion": "off"
+      }
+    }
+  ],
+  "example_title": "Grove — pomiar analogowy i matematyka",
+  "example_description": "Przykład przekształcania danych analogowych.",
+  "example_category": "Pomiary"
+}

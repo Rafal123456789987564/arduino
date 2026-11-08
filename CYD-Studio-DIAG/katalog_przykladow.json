@@ -1,0 +1,238 @@
+{
+  "version": 1,
+  "count": 29,
+  "examples": [
+    {
+      "id": "01",
+      "title": "Akumulator 1S — napięcie 3,2–4,2 V",
+      "category": "Pomiary",
+      "description": "Pomiar napięcia ogniwa i poziomu naładowania.",
+      "file": "01_Akumulator_1S_Napiecie.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "02",
+      "title": "Woltomierz ADC — GPIO35",
+      "category": "Pomiary",
+      "description": "Odczyt napięcia z wejścia ADC35.",
+      "file": "02_Woltomierz_ADC_GPIO35.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "03",
+      "title": "Przerzutnik Schmitta — napięcie",
+      "category": "Sterowanie",
+      "description": "Przełączanie z histerezą, bez skakania stanu.",
+      "file": "03_Histereza_Schmitt_Napiecie.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "04",
+      "title": "Suwak dotykowy — jasność LCD",
+      "category": "Sterowanie",
+      "description": "Regulacja podświetlenia za pomocą dotyku.",
+      "file": "04_Suwak_Jasnosc_LCD.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "05",
+      "title": "Timer LED — bez delay()",
+      "category": "Sterowanie",
+      "description": "Nieblokujące sterowanie diodą LED.",
+      "file": "05_Timer_LED_Bez_Delay.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "06",
+      "title": "CAN RX — monitor ramek",
+      "category": "Komunikacja",
+      "description": "Odbiór danych z magistrali CAN z zewnętrznym transceiverem.",
+      "file": "06_CAN_RX_Monitor.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "07",
+      "title": "CC1101 — Waterfall 433 MHz (RSSI)",
+      "category": "Radio i analiza",
+      "description": "Waterfall z pomiarów RSSI, nie z IQ/FFT radiowego.",
+      "file": "07_CC1101_Waterfall_433MHz.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "08",
+      "title": "FFT — analizator sygnału ADC",
+      "category": "Radio i analiza",
+      "description": "Widmo sygnału mierzonego przez ADC.",
+      "file": "08_FFT_Analizator_ADC.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "09",
+      "title": "Wi-Fi — miernik siły sygnału",
+      "category": "Komunikacja",
+      "description": "Pomiar siły odbieranego sygnału Wi-Fi.",
+      "file": "09_WiFi_Sila_Sygnalu.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "10",
+      "title": "Grove — pomiar analogowy i matematyka",
+      "category": "Pomiary",
+      "description": "Przykład przekształcania danych analogowych.",
+      "file": "10_Grove_Analog_Matematyka.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "11",
+      "title": "ADC GPIO35 — FFT i Waterfall",
+      "category": "Radio i analiza",
+      "description": "Wizualizacja czasowo-częstotliwościowa sygnału ADC.",
+      "file": "11_ADC_GPIO35_FFT_Waterfall.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "12",
+      "title": "LVGL — wygląd Visual Pro",
+      "category": "Komponenty LCD",
+      "description": "Przykłady stylów kontrolek LVGL.",
+      "file": "12_LVGL_Visual_Pro.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "13",
+      "title": "Cardputer ADV — peryferia",
+      "category": "Płytki M5Stack",
+      "description": "Profil sprzętowy Cardputer ADV i jego połączenia.",
+      "file": "13_Cardputer_ADV_Peryferia.json",
+      "profile": "cardputeradv"
+    },
+    {
+      "id": "14",
+      "title": "CYD — test kolorów, skali i dotyku",
+      "category": "Testy LCD",
+      "description": "Kolory RGB, podziałka miernika i współrzędne dotyku.",
+      "file": "14_CYD_Test_Kolorow_Skali_Dotyku.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "15",
+      "title": "LVGL — galeria wszystkich komponentów",
+      "category": "Komponenty LCD",
+      "description": "Przegląd natywnych kontrolek LVGL.",
+      "file": "15_LVGL_Galeria_Komponentow.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "16",
+      "title": "CYD 2.8 R (1 USB) — czcionki i dotyk",
+      "category": "Testy LCD",
+      "description": "Test orientacji dotyku i tekstów na LCD.",
+      "file": "16_CYD_28R_1USB_Czcionki_Dotyk.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "17",
+      "title": "M5Stack CoreInk — e-Ink 200×200",
+      "category": "Płytki M5Stack",
+      "description": "Przykład konfiguracji CoreInk.",
+      "file": "17_M5Stack_CoreInk.json",
+      "profile": "coreink"
+    },
+    {
+      "id": "18",
+      "title": "M5Stack StamPLC — CAN / RS485",
+      "category": "Płytki M5Stack",
+      "description": "Przykład konfiguracji StamPLC.",
+      "file": "18_M5Stack_StamPLC.json",
+      "profile": "stamplc"
+    },
+    {
+      "id": "19",
+      "title": "CYD — test napisów i kontrastu",
+      "category": "Testy LCD",
+      "description": "Test napisów na przyciskach i kontrastu.",
+      "file": "19_CYD_Test_Napisow_Kontrastu.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "20",
+      "title": "M5Stack ATOM S3 Lite — GPIO",
+      "category": "Płytki M5Stack",
+      "description": "Profil urządzenia bez ekranu.",
+      "file": "20_M5Stack_ATOM_S3_Lite.json",
+      "profile": "atoms3lite"
+    },
+    {
+      "id": "21",
+      "title": "M5Stack ATOM Matrix — LED 5×5",
+      "category": "Płytki M5Stack",
+      "description": "Profil urządzenia z matrycą LED.",
+      "file": "21_M5Stack_ATOM_Matrix.json",
+      "profile": "atommatrix"
+    },
+    {
+      "id": "22",
+      "title": "M5Stack StampS3 — GPIO",
+      "category": "Płytki M5Stack",
+      "description": "Profil StampS3 bez LCD.",
+      "file": "22_M5Stack_StampS3.json",
+      "profile": "stamps3"
+    },
+    {
+      "id": "23",
+      "title": "M5Stack ATOM S3 — LCD 128×128",
+      "category": "Płytki M5Stack",
+      "description": "Profil ATOM S3 z ekranem.",
+      "file": "23_M5Stack_ATOM_S3_LCD.json",
+      "profile": "atoms3"
+    },
+    {
+      "id": "24",
+      "title": "M5Stack CoreS3 — LCD i dotyk",
+      "category": "Płytki M5Stack",
+      "description": "Profil CoreS3 z ekranem dotykowym.",
+      "file": "24_M5Stack_CoreS3.json",
+      "profile": "cores3"
+    },
+    {
+      "id": "25",
+      "title": "M5Stack Core2 — LCD i dotyk",
+      "category": "Płytki M5Stack",
+      "description": "Profil Core2 z ekranem dotykowym.",
+      "file": "25_M5Stack_Core2.json",
+      "profile": "core2"
+    },
+    {
+      "id": "26",
+      "title": "M5Stack Basic — ekran LCD",
+      "category": "Płytki M5Stack",
+      "description": "Profil M5Stack Basic.",
+      "file": "26_M5Stack_Basic.json",
+      "profile": "m5basic"
+    },
+    {
+      "id": "27",
+      "title": "M5StickC Plus2 — ekran LCD",
+      "category": "Płytki M5Stack",
+      "description": "Profil M5StickC Plus2.",
+      "file": "27_M5StickC_Plus2.json",
+      "profile": "stickcplus2"
+    },
+    {
+      "id": "28",
+      "title": "CYD — jasność LCD i Duty PWM (%)",
+      "category": "Sterowanie",
+      "description": "Sprawdzenie wartości jasności oraz Duty w procentach.",
+      "file": "28_CYD_Jasnosc_Duty_PWM.json",
+      "profile": "cyd28"
+    },
+    {
+      "id": "29",
+      "title": "CC1101 — Waterfall RSSI i FFT ADC",
+      "category": "Radio i analiza",
+      "description": "Niezależne źródła RSSI CC1101 i próbek FFT ADC.",
+      "file": "29_CC1101_Waterfall_RSSI_FFT_ADC.json",
+      "profile": "cyd28"
+    }
+  ]
+}

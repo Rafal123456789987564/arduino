@@ -1,0 +1,8 @@
+<PARSED TEXT FOR SHEET: 1 / 1 TABS
+TAB NAME: partitions_cyd.csv>
+index,,,,# CYD Studio 2.33 / 4 MB ESP32. Separate user touch data, no OTA.
+# Name,   Type, SubType, Offset,    Size,      Flags
+nvs,       data, nvs,     0x9000,    0x4000,
+touchcal,  data, nvs,     0xD000,    0x3000,
+factory,   app,  factory, 0x10000,   0x300000,
+spiffs,    data, spiffs,  0x310000,  0x0F0000,

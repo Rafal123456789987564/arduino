@@ -1,0 +1,50 @@
+{
+  "format": "cyd-studio-project",
+  "schema_version": "1.0",
+  "version": 3,
+  "currentDevice": "21_atom_matrix",
+  "devices": [
+    {
+      "id": "21_atom_matrix",
+      "profile": "atommatrix",
+      "name": "M5Stack ATOM Matrix — LED 5×5",
+      "rotation": 0,
+      "features": {
+        "wifi_mode": "off",
+        "ble": false,
+        "bt_classic": false,
+        "gyro": false,
+        "battery": false,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0
+      },
+      "pins": {
+        "i2c_sda": 21,
+        "i2c_scl": 22,
+        "battery_adc": 35,
+        "battery_divider": 2,
+        "mic_bclk": 19,
+        "mic_ws": 22,
+        "mic_din": 23
+      },
+      "scenes": [],
+      "currentScene": "menu",
+      "logic": {
+        "nodes": [],
+        "edges": []
+      },
+      "touch": {
+        "autoCal": false
+      },
+      "libraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      }
+    }
+  ],
+  "example_title": "M5Stack ATOM Matrix — LED 5×5",
+  "example_description": "Profil urządzenia z matrycą LED.",
+  "example_category": "Płytki M5Stack"
+}

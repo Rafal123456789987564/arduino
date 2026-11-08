@@ -1,0 +1,187 @@
+{
+  "version": 3,
+  "currentDevice": "ex06",
+  "devices": [
+    {
+      "id": "ex06",
+      "profile": "cyd28",
+      "name": "CAN RX — monitor ramek",
+      "scenes": [
+        {
+          "id": "menu",
+          "name": "CAN RX — monitor ramek",
+          "bg": "#0b192a",
+          "widgets": [
+            {
+              "id": "title6",
+              "type": "text",
+              "text": "CAN BUS RX MONITOR",
+              "x": 6,
+              "y": 4,
+              "w": 308,
+              "h": 28,
+              "bg": "#26baee",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 0,
+              "source": "constant",
+              "paths": []
+            },
+            {
+              "id": "w6_integer_52_70",
+              "type": "integer",
+              "text": "CAN BYTE0",
+              "x": 52,
+              "y": 70,
+              "w": 220,
+              "h": 83,
+              "bg": "#53c7f7",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 70,
+              "source": "logic:e06n1",
+              "min": 0,
+              "max": 255,
+              "unit": "",
+              "precision": 1,
+              "paths": []
+            },
+            {
+              "id": "hint6",
+              "type": "text",
+              "text": "500kbps / listen only / transceive",
+              "x": 9,
+              "y": 212,
+              "w": 302,
+              "h": 23,
+              "bg": "#adbcda",
+              "fg": "#ffffff",
+              "to": "",
+              "level": 0,
+              "source": "constant",
+              "paths": []
+            }
+          ]
+        }
+      ],
+      "currentScene": "menu",
+      "features": {
+        "wifi_mode": "off",
+        "sta_ssid": "CYD-DIAG",
+        "sta_password": "cyd12345",
+        "ap_ssid": "CYD-DIAG",
+        "ap_password": "cyd12345",
+        "ble": false,
+        "bt_classic": false,
+        "gyro": false,
+        "battery": false,
+        "battery_v_min": 11.8,
+        "battery_v_max": 14.4,
+        "battery_smooth": 20,
+        "backlight_brightness": 85,
+        "backlight_timeout_s": 0,
+        "backlight_dim": 0,
+        "audio_rx": false,
+        "audio_tx": false,
+        "audio_dest": "192.168.4.1",
+        "audio_port": 3333
+      },
+      "pins": {
+        "i2c_sda": 27,
+        "i2c_scl": 22,
+        "battery_adc": 35,
+        "battery_divider": 2.0,
+        "mic_bclk": 19,
+        "mic_ws": 22,
+        "mic_din": 23
+      },
+      "touch": {
+        "xmin": 200,
+        "xmax": 3900,
+        "ymin": 200,
+        "ymax": 3900,
+        "swap": false,
+        "flipX": true,
+        "flipY": true,
+        "orientationVersion": 4
+      },
+      "libraries": [],
+      "custom": {
+        "includes": "",
+        "setup": "",
+        "loop": ""
+      },
+      "grove": {
+        "A": {
+          "io1": 27,
+          "io2": 22
+        },
+        "B": {
+          "io1": 35,
+          "io2": -1
+        },
+        "C": {
+          "io1": -1,
+          "io2": -1
+        }
+      },
+      "logic": {
+        "nodes": [
+          {
+            "id": "e06n0",
+            "type": "canrx",
+            "x": 30,
+            "y": 40,
+            "props": {
+              "rx": 27,
+              "tx": 22,
+              "bitrate": 500,
+              "byte": 0
+            }
+          },
+          {
+            "id": "e06n1",
+            "type": "screenout",
+            "x": 382,
+            "y": 40,
+            "props": {
+              "widgetId": "w6_integer_52_70"
+            }
+          },
+          {
+            "id": "e06n2",
+            "type": "serial",
+            "x": 734,
+            "y": 40,
+            "props": {
+              "name": "CAN_BYTE0",
+              "ms": 200
+            }
+          }
+        ],
+        "edges": [
+          {
+            "from": "e06n0",
+            "to": "e06n1",
+            "input": 0
+          },
+          {
+            "from": "e06n0",
+            "to": "e06n2",
+            "input": 0
+          }
+        ],
+        "layoutVersion": 2
+      },
+      "rotation": 1,
+      "lcd": {
+        "driver": "ili9341_2",
+        "order": "rgb",
+        "inversion": "off"
+      }
+    }
+  ],
+  "example_title": "CAN RX — monitor ramek",
+  "example_description": "Odbiór danych z magistrali CAN z zewnętrznym transceiverem.",
+  "example_category": "Komunikacja"
+}
